@@ -1,0 +1,19 @@
+{
+    "name": "ssesmaeeli/nextpaygateway",
+    "description": "This package is for dealing with nextpay.ir gateway.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "seyyed sajjad esmaeeli",
+            "email": "s.sajjad.esmaeeli@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Ssesmaeeli\\NextpayGateway\\": "src/"
+        }
+    }
+}
