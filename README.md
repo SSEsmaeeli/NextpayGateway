@@ -6,7 +6,7 @@ package's home : [nextpay payment gateway by laravel](http://nextpay.ir)
 
 by this  package we are able to connect to all Iranian bank with one unique API.
 
-Please inform us once you've encountered [bug](https://github.com/nextpay-ir/laravel-payment-gateway/issues) or [issue](https://github.com/nextpay-ir/laravel-payment-gateway/issues)  .
+Please inform us once you've encountered [bug](https://github.com/SSEsmaeeli/NextpayGateway/issues) or [issue](https://github.com/SSEsmaeeli/NextpayGateway/issues)  .
 
 NextPay payment gateway for [Laravel](https://laravel.com/)
 ----------
@@ -14,50 +14,20 @@ NextPay payment gateway for [Laravel](https://laravel.com/)
 
 **Installation**:
 
-STEP 1 : 
-
-    copy all folder to root path laravel project
+STEP 1 : run 
+    
+    composer require ssesmaeeli/nextpaygateway
     
 STEP 2 : Add `provider` and `facade` in config/app.php
 
     'providers' => [
       ...
-      NextpayPayment\Gateway\NextpayServiceProvider::class, // <-- add this line at the end of provider array
+      SSEsmaeeli\NextpayGateway\NextpayServiceProvider::class, // <-- add this line at the end of provider array
     ],
-
-Step 3: Add package to autoload array in composer.json master file
-        
-    "autoload": {
-        "classmap": [
-            ...
-            "database"
-            ...
-        ],
-        "psr-4": {
-            ...
-            "App\\": "app/",
-            ...
-            "NextpayPayment\\Gateway\\": "packages/nextpay_payment/gateway/src"
-        }
-    },
 Step 3:  
 
     php artisan vendor:publish --provider=NextPay\Gateway\GatewayServiceProvider
     php artisan vendor:publish --provider=NextpayPayment\Gateway\GatewayServiceProvider
-
-Step 4:
-
-    IF files in boot provider not moved to related folder doing follow step:
-        4.1 copy file  gateway.php into config directory [Master]
-        4.2 copy files migration into database/migrations/
-    Else
-        php artisan migrate
-        
-Default Path:
-    
-    Request for generate token : server address [with post]/nextpay/request/
-    Response for verify transaction : server address [with post]/nextpay/callback/
-
 
 Configuration file is placed in config/gateway.php , open it and enter your banks credential:
 
